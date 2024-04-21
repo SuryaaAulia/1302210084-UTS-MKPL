@@ -4,24 +4,20 @@ import java.time.LocalDate;
 
 public class Employee {
 
-	private String employeeId;
 	private PersonalInfo employeeInfo;
 
 	private int yearJoined;
 	private int monthJoined;
-	private int dayJoined;
 	private int monthWorkingInYear;
 
 	private int monthlySalary;
 	private int otherMonthlyIncome;
 	private int annualDeductible;
 
-	public Employee(PersonalInfo employeeInfo, String employeeId, int yearJoined, int monthJoined, int dayJoined) {
+	public Employee(PersonalInfo employeeInfo, int yearJoined, int monthJoined) {
 		this.employeeInfo = employeeInfo;
-		this.employeeId = employeeId;
 		this.yearJoined = yearJoined;
 		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
 	}
 
 	/**
