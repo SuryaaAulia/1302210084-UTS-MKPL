@@ -1,11 +1,8 @@
 package lib;
 
-import java.time.LocalDate;
-
 public class Employee {
 
 	private PersonalInfo employeeInfo;
-	private Employee employee;
 
 	private int yearJoined;
 	private int monthJoined;
