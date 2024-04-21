@@ -5,6 +5,7 @@ import java.time.LocalDate;
 public class Employee {
 
 	private PersonalInfo employeeInfo;
+	private Employee employee;
 
 	private int yearJoined;
 	private int monthJoined;
@@ -40,12 +41,32 @@ public class Employee {
 		}
 	}
 
+	public int getMonthlySalary() {
+		return this.monthlySalary;
+	}
+
 	public void setAnnualDeductible(int deductible) {
 		this.annualDeductible = deductible;
 	}
 
+	public int getAnnualDeductible(){
+		return this.annualDeductible;
+	}
+
 	public void setAdditionalIncome(int income) {
 		this.otherMonthlyIncome = income;
+	}
+
+	public int getAdditionalIncome() {
+		return this.otherMonthlyIncome;
+	}
+
+	public PersonalInfo getPersonalInfo() {
+		return this.employeeInfo;
+	}
+
+	public int getMonthJoined() {
+		return monthJoined;
 	}
 
 	public int getAnnualIncomeTax() {
@@ -60,7 +81,6 @@ public class Employee {
 			monthWorkingInYear = 12;
 		}
 
-		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible,
-				employeeInfo.getSpouseIdNumber().equals(""), employeeInfo.getChildIdNumbers().size());
+		return TaxFunction.calculateTax(employee);
 	}
 }
