@@ -49,7 +49,7 @@ public class Employee {
 		this.annualDeductible = deductible;
 	}
 
-	public int getAnnualDeductible(){
+	public int getAnnualDeductible() {
 		return this.annualDeductible;
 	}
 
@@ -69,18 +69,11 @@ public class Employee {
 		return monthJoined;
 	}
 
-	public int getAnnualIncomeTax() {
+	public int getYearJoined() {
+		return yearJoined;
+	}
 
-		// Menghitung berapa lama pegawai bekerja dalam setahun ini, jika pegawai sudah
-		// bekerja dari tahun sebelumnya maka otomatis dianggap 12 bulan.
-		LocalDate date = LocalDate.now();
-
-		if (date.getYear() == yearJoined) {
-			monthWorkingInYear = date.getMonthValue() - monthJoined;
-		} else {
-			monthWorkingInYear = 12;
-		}
-
-		return TaxFunction.calculateTax(employee);
+	public void setWorkingInYear(int monthWorkingInYear) {
+		this.monthWorkingInYear = monthWorkingInYear;
 	}
 }
